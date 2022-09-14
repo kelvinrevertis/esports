@@ -1,9 +1,9 @@
-import  express  from "express";
+import  express, { response }  from "express";
 
 const app = express()
 
-app.get('/ads',()=>{
-    console.log("Acesso ao Ads")
+app.get('/ads',(request, response)=>{
+    response.send("Acesso ao Ads")
 })
 
-app.listen(3000,)
+app.listen(3000)
