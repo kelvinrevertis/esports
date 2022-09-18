@@ -14,7 +14,7 @@ app.post('/ads',(request, response) =>{
     ])
 })
 
-app.get('/ads',(request, response)=>{
+app.get('/game/:id/ads',(request, response)=>{
     return response.json([
         {id: 1, name:'Anúncio 1'},
         {id: 2, name:'Anúncio 2'},
