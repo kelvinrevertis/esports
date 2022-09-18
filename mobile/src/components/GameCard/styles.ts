@@ -24,9 +24,8 @@ export const styles = StyleSheet.create({
         fontFamily: THEME.FONT_FAMILY.REGULAR
     },
     ads: {
-        color: THEME.COLORS.TEXT,
+        color:THEME.COLORS.TEXT,
         fontFamily: THEME.FONT_FAMILY.REGULAR,
         fontSize: THEME.FONT_SIZE.MD
-    },
-    
+    }
 });
