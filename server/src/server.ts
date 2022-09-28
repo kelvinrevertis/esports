@@ -15,6 +15,8 @@ app.post('/ads',(request, response) =>{
 })
 
 app.get('/game/:id/ads',(request, response)=>{
+   /* const gameId = request.params.id;
+    return response.send(gameId)// exemplo para retornar o que tiver no "id" exemplo: http://localhost:3000/game/1456/ads*/
     return response.json([
         {id: 1, name:'Anúncio 1'},
         {id: 2, name:'Anúncio 2'},
