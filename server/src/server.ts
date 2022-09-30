@@ -25,12 +25,24 @@ app.post('/ads',(request, response) =>{
     ])
 })
 
-app.get('/ads/:id/discord',(request, response)=>{
+app.get('/games/:id/ads',async (request,response) => {
+    const gameId = request.params.id
+
+    const ads = await prisma.ad.findMany({
+        where:{
+            gameId,
+        }
+    })
+    return response.json(ads)
+    
+})
+
+app.get('/games/:id/discord', async (request, response)=>{
    /* const adId = request.params.id;
     return response.send(gameId)// exemplo para retornar o que tiver no "id" exemplo: http://localhost:3000/game/1456/ads*/
-    return response.json([
 
-    ])
+
+    return response.json([])
 })
 
 app.listen(3000)
