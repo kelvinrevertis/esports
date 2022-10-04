@@ -55,12 +55,21 @@ app.get('/games/:id/ads',async (request,response) => {
     
 })
 
-app.get('/games/:id/discord', async (request, response)=>{
-   /* const adId = request.params.id;
-    return response.send(gameId)// exemplo para retornar o que tiver no "id" exemplo: http://localhost:3000/game/1456/ads*/
+app.get('/ads/:id/discord', async (request, response)=>{
+    const adId = request.params.id;
+    //return response.send(gameId)// exemplo para retornar o que tiver no "id" exemplo: http://localhost:3000/game/1456/ads*/
 
-
-    return response.json([])
+    const ad = await prisma.ad.findUniqueOrThrow({
+        select:{
+            discord: true,
+        },
+        where:{
+            id: adId,
+        }
+    })
+    return response.json({
+        discord: ad.discord,
+    })
 })
 
 app.listen(3000)
