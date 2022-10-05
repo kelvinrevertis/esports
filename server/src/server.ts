@@ -1,6 +1,8 @@
 import express, { response } from "express";
 import { PrismaClient } from "@prisma/client";
 import { convertHour } from "./utils/convert-hour";
+import { convertMinutes } from "./utils/convert-minutes";
+
 
 const app = express()
 app.use(express.json())
@@ -26,7 +28,7 @@ app.get('/games', async (request, response) => {
 app.post('/games/:id/ads', async (request, response) => {
     const gameId = request.params.id
     const body = request.body
-//PAUSADO EM 1:29:00
+
     const ad = await prisma.ad.create({
         data: {
             gameId,
@@ -66,7 +68,9 @@ app.get('/games/:id/ads', async (request, response) => {
     return response.json(ads.map(ad => {
         return {
             ...ad,
-            weekDays: ad.weekDays.split(',')
+            weekDays: ad.weekDays.split(','),
+            hourStart: convertMinutes(ad.hourStart),
+            hourEnd: convertMinutes(ad.hourEnd)
         }
     }))
 
