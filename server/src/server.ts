@@ -1,5 +1,6 @@
 import express, { response } from "express";
 import { PrismaClient } from "@prisma/client";
+import { convertHour } from "./utils/convert-hour";
 
 const app = express()
 app.use(express.json())
@@ -33,8 +34,8 @@ app.post('/games/:id/ads', async (request, response) => {
             yearsPlaying: body.yearsPlaying,
             discord: body.discord,
             weekDays: body.weekDays.join(','),
-            hourStart: body.hourStart,
-            hourEnd: body.hourEnd,
+            hourStart: convertHour(body.hourStart),
+            hourEnd: convertHour(body.hourEnd),
             useVoiceChannel: body.useVoiceChannel,
         }
     })
