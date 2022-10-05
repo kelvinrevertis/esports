@@ -25,7 +25,7 @@ app.get('/games', async (request, response) => {
 app.post('/games/:id/ads', async (request, response) => {
     const gameId = request.params.id
     const body = request.body
-
+//PAUSADO EM 1:29:00
     const ad = await prisma.ad.create({
         data: {
             gameId,
