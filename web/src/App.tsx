@@ -13,12 +13,8 @@ function App() {
             </h1>
 
             <div className='grid grid-cols-6 gap-6 mt-16'>
-               <GameBanner/>
-               <GameBanner/>
-               <GameBanner/>
-               <GameBanner/>
-               <GameBanner/>
-               <GameBanner/>
+               <GameBanner bannerUrl='/Game (1).png' title='League of legends' adsCount={'8'}/>
+
 
             </div>
             <div className='pt-1 bg-nlw-gradient self-stretch mt-8 rounded-lg overflow-hidden'>
