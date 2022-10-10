@@ -5,13 +5,21 @@ import { GameBanner } from './components/GameBanner'
 import { CreateAdBanner } from './components/CreateAdBanner'
 import { useState, useEffect } from 'react'
 
+interface Game {
+    id: string;
+    title: string;
+    bannerUrl: string;
+    _count:{
+        ads: number;
+    }
+}
 function App() {
-    const [games, setGames] = useState([])
+    const [games, setGames] = useState<Game[]>([])
 
     useEffect(()=>{
         fetch('http://localhost:3000/games')
         .then(response => response.json())
-        .then(data => {console.log(data)})
+        .then(data => {setGames(data)})
     },[])
 
     
@@ -24,8 +32,11 @@ function App() {
             </h1>
 
             <div className='grid grid-cols-6 gap-6 mt-16'>
-               <GameBanner bannerUrl='/Game (1).png' title='League of legends' adsCount={'8'}/>
-               <GameBanner bannerUrl='/Game (6).png' title='Wow' adsCount={'8'}/>
+               {games.map(game =>{
+                return(
+                    <GameBanner title={game.title} bannerUrl={game.bannerUrl} adsCount={game._count.ads}/>
+                )
+               })}
             </div>
 
             <CreateAdBanner/>            
