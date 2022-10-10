@@ -3,8 +3,16 @@ import './styles/main.css'
 import LogoImg from './assets/logo-nlw-esports.svg'
 import { GameBanner } from './components/GameBanner'
 import { CreateAdBanner } from './components/CreateAdBanner'
+import { useState, useEffect } from 'react'
 
 function App() {
+    const [games, setGames] = useState([])
+
+    useEffect(()=>{
+        
+    })
+
+    
     return (
         <div className='max-w-[1344px] mx-auto flex flex-col items-center my-20'>
             <img src={LogoImg} alt="" />
