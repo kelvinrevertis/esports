@@ -43,10 +43,15 @@ function App() {
                 <CreateAdBanner />
 
                 <Dialog.Portal>
-                    <Dialog.Overlay/>
+                    <Dialog.Overlay className='bg-black/60 inset-0 fixed'/>
 
                     <Dialog.Content>
                         <Dialog.Title>Publique um Anuncio</Dialog.Title>
+
+                        <Dialog.Content>
+                            So pra vizualizar
+                        </Dialog.Content>
+
                     </Dialog.Content>
                 </Dialog.Portal>
             </Dialog.Root>
