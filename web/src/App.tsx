@@ -1,4 +1,4 @@
-import { MagnifyingGlassPlus } from 'phosphor-react'
+import { GameController, MagnifyingGlassPlus } from 'phosphor-react'
 import './styles/main.css'
 import LogoImg from './assets/logo-nlw-esports.svg'
 import { GameBanner } from './components/GameBanner'
@@ -49,10 +49,10 @@ function App() {
                         <Dialog.Title className='text-3xl font-black'>Publique um Anuncio</Dialog.Title>
 
                         <Dialog.Content>
-                            <form>
-                                <div>
-                                    <label htmlFor="game"> Qual o game?</label>
-                                    <input id='game' type="text" placeholder='Selecione o game que deseja jogar' />
+                            <form className='mt-8'>
+                                <div className='flex flex-col gap-2'>
+                                    <label htmlFor="game" className='font-semibold'> Qual o game?</label>
+                                    <input id='game' type="text" className='bg-zinc-900 py-3 px-4 rounded text-sm' placeholder='Selecione o game que deseja jogar' />
                                 </div>
                                 <div>
                                     <label htmlFor="name">Seu nome (ou nickname)</label>
@@ -81,6 +81,19 @@ function App() {
                                         <input id='hourEnd' type="time" placeholder='Até'/>
                                     </div>
                                 </div>
+
+                                <div>
+                                    <input type="checkbox" />
+                                    Costumo me conectar ao chat de voz
+                                </div>
+
+                                <footer>
+                                    <button>Cancelar</button>
+                                    <button type='submit'>
+                                        <GameController/>
+                                        Encontrar duo
+                                    </button>
+                                </footer>
 
                             </form>
                         </Dialog.Content>
