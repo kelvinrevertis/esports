@@ -92,15 +92,16 @@ function App() {
                                 </div>
                             </div>
 
-                            <div>
+                            <div className="mt-2 flex gap-2 text-sm ">
                                 <Input type="checkbox" />
                                 Costumo me conectar ao chat de voz
                             </div>
 
-                            <footer>
-                                <button>Cancelar</button>
-                                <button type='submit'>
-                                    <GameController />
+                            <footer className='mt-4 flex justify-end gap-4'>
+                                <Dialog.Close type='button' className='bg-zinc-500 hover:bg-zinc-600 px-5 h-12 rounded-md font-semibold '>Cancelar</Dialog.Close>
+                                
+                                <button className='bg-violet-500 hover:bg-violet-600 px-5 h-12 rounded-md font-semibold flex items-center gap-3 ' type='submit'>
+                                    <GameController className='w-6 h-6' />
                                     Encontrar duo
                                 </button>
                             </footer>
