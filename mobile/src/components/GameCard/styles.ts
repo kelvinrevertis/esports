@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     container: {
         marginRight: 24,
     },
-    cover: {
+    bannerUrl: {
         width: 240,
         height: 320,
         justifyContent: 'flex-end',
